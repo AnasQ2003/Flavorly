@@ -9,8 +9,10 @@ import {
   Heart, ChefHat, MessageCircle, Award, Flame, Sparkles,
   BellOff, Calendar, ShoppingBasket, Bell, Filter, Trash2
 } from "lucide-react";
+import { requireAuth } from "@/lib/route-guards";
 
 export const Route = createFileRoute("/notifications")({
+  beforeLoad: () => requireAuth(),
   head: () => ({ meta: [{ title: "Notifications — Cultivate" }] }),
   component: Notifications,
 });

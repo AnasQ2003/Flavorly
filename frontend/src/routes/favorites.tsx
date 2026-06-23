@@ -4,9 +4,10 @@ import { AppShell } from "@/components/AppShell";
 import { recipes } from "@/lib/mock-data";
 import { Heart, Sparkles, Clock } from "lucide-react";
 import { useFlavorStore } from "@/lib/flavor-store";
-
+import { requireAuth } from "@/lib/route-guards";
 
 export const Route = createFileRoute("/favorites")({
+  beforeLoad: () => requireAuth(),
   head: () => ({ meta: [{ title: "Favorites — Cultivate" }] }),
   component: Favorites,
 });

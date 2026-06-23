@@ -1,9 +1,12 @@
-import { createFileRoute, Link } from "@tanstack/react-router";
+import { createFileRoute, Link, useNavigate } from "@tanstack/react-router";
 import { useEffect, useState } from "react";
 import { toast } from "sonner";
 import { PhoneFrame } from "@/components/PhoneFrame";
 import { PageHeader } from "@/components/PageHeader";
 import { BottomTabBar } from "@/components/BottomTabBar";
+import { useAuthStore } from "@/lib/auth-store";
+import { requireAuth } from "@/lib/route-guards";
+
 import {
   Bell, Moon, Globe, Lock, HelpCircle, ChevronRight, Sparkles,
   Volume2, ShieldCheck, CreditCard, Download, Trash2, LogOut,
@@ -11,6 +14,7 @@ import {
 } from "lucide-react";
 
 export const Route = createFileRoute("/settings")({
+  beforeLoad: () => requireAuth(),
   head: () => ({ meta: [{ title: "Settings — Cultivate" }] }),
   component: Settings,
 });
@@ -21,6 +25,8 @@ const COMING_SOON = (label: string) =>
   });
 
 function Settings() {
+  const navigate = useNavigate();
+  const logout = useAuthStore((s) => s.logout);
   const [push, setPush] = useState(true);
   const [sound, setSound] = useState(true);
   const [dark, setDark] = useState(false);
@@ -123,7 +129,7 @@ function Settings() {
           {/* Danger */}
           <div className="space-y-2">
             <button
-              onClick={() => toast.success("Signed out", { description: "You have been signed out of this device." })}
+              onClick={() => { logout(); toast.success("Signed out", { description: "You have been signed out of this device." }); navigate({ to: "/auth" }); }}
               className="w-full flex items-center gap-3 px-4 py-4 rounded-2xl bg-card ring-1 ring-border text-foreground font-medium hover:ring-primary/40 transition"
             >
               <LogOut className="size-4 text-muted-foreground" />

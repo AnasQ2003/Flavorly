@@ -6,12 +6,14 @@ import { BottomTabBar } from "@/components/BottomTabBar";
 import { recipes } from "@/lib/mock-data";
 import { useFlavorStore } from "@/lib/flavor-store";
 import { toast } from "sonner";
+import { requireAuth } from "@/lib/route-guards";
 import {
   Sunrise, Sun, Moon, Flame, Apple, Beef, Wheat, Droplet,
   Sparkles, Plus, ChevronRight, Clock, Users, ChefHat,
 } from "lucide-react";
 
 export const Route = createFileRoute("/mealplan")({
+  beforeLoad: () => requireAuth(),
   head: () => ({ meta: [{ title: "Meal Plan — Cultivate" }] }),
   component: MealPlan,
 });

@@ -1,4 +1,5 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
+import { requireAuth } from "@/lib/route-guards";
 import { useState } from "react";
 import { AppShell } from "@/components/AppShell";
 import avatar from "@/assets/avatar-chef.jpg";
@@ -10,6 +11,7 @@ import { useNavigate } from "@tanstack/react-router";
 import { toast } from "sonner";
 
 export const Route = createFileRoute("/profile")({
+  beforeLoad: () => requireAuth(),
   head: () => ({ meta: [{ title: "Profile — Cultivate" }] }),
   component: Profile,
 });

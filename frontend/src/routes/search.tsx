@@ -3,8 +3,10 @@ import { useState } from "react";
 import { AppShell } from "@/components/AppShell";
 import { recipes, categories, regions, regionDishes } from "@/lib/mock-data";
 import { Search as SearchIcon, X, SlidersHorizontal, Clock, Flame, Leaf, ChefHat, Globe2, MapPin } from "lucide-react";
+import { requireAuth } from "@/lib/route-guards";
 
 export const Route = createFileRoute("/search")({
+  beforeLoad: () => requireAuth(),
   head: () => ({ meta: [{ title: "Search — Cultivate" }] }),
   component: Search,
 });

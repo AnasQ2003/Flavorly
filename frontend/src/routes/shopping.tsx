@@ -9,8 +9,10 @@ import {
   Check, Plus, ShoppingBasket, Sparkles, Search, Trash2,
   Carrot, Beef, Milk, Wheat, Cookie, Wine, X
 } from "lucide-react";
+import { requireAuth } from "@/lib/route-guards";
 
 export const Route = createFileRoute("/shopping")({
+  beforeLoad: () => requireAuth(),
   head: () => ({ meta: [{ title: "Shopping — Cultivate" }] }),
   component: Shopping,
 });

@@ -4,9 +4,10 @@ import { PhoneFrame } from "@/components/PhoneFrame";
 import { Mail, Lock, User, ChefHat, ArrowRight } from "lucide-react";
 import { useAuthStore } from "@/lib/auth-store";
 import { useFlavorStore } from "@/lib/flavor-store";
-
+import { redirectIfAuthenticated } from "@/lib/route-guards";
 
 export const Route = createFileRoute("/auth")({
+  beforeLoad: () => redirectIfAuthenticated(),
   head: () => ({
     meta: [{ title: "Welcome — Cultivate" }, { name: "description", content: "Sign in or create an account." }],
   }),

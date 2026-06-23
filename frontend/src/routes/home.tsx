@@ -4,8 +4,10 @@ import { AppShell } from "@/components/AppShell";
 import { recipes, blogs, categories, regions, cookingTips } from "@/lib/mock-data";
 import { Flame, Clock, Sparkles, ChevronLeft, ChevronRight, TrendingUp, Award } from "lucide-react";
 import { useFlavorStore } from "@/lib/flavor-store";
+import { requireAuth } from "@/lib/route-guards";
 
 export const Route = createFileRoute("/home")({
+  beforeLoad: () => requireAuth(),
   head: () => ({ meta: [{ title: "Home — Cultivate" }] }),
   component: Home,
 });

@@ -7,8 +7,10 @@ import { Camera, Check, MapPin } from "lucide-react";
 import { regions } from "@/lib/mock-data";
 import { useFlavorStore } from "@/lib/flavor-store";
 import { toast } from "sonner";
+import { requireAuth } from "@/lib/route-guards";
 
 export const Route = createFileRoute("/profile/edit")({
+  beforeLoad: () => requireAuth(),
   head: () => ({ meta: [{ title: "Edit Profile — Cultivate" }] }),
   component: EditProfile,
 });

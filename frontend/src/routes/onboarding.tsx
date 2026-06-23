@@ -3,8 +3,12 @@ import { useState } from "react";
 import { PhoneFrame } from "@/components/PhoneFrame";
 import { regions, mealTypes } from "@/lib/mock-data";
 import { ArrowRight, Check, Flame, Leaf, Sparkles, ArrowLeft } from "lucide-react";
+import { requireAuth } from "@/lib/route-guards";
+import { useFlavorStore } from "@/lib/flavor-store";
+import { toast } from "sonner";
 
 export const Route = createFileRoute("/onboarding")({
+  beforeLoad: () => requireAuth(),
   head: () => ({ meta: [{ title: "Personalize — Cultivate" }] }),
   component: Onboarding,
 });
@@ -43,9 +47,31 @@ function Onboarding() {
     (step === 1 && regs.length > 0) ||
     (step === 2 && meals.length > 0 && diet.length > 0);
 
-  const next = () => {
-    if (step < total - 1) setStep((s) => s + 1);
-    else navigate({ to: "/home" });
+  const updateProfile = useFlavorStore((s) => s.updateProfile);
+
+  const next = async () => {
+    if (step < total - 1) {
+      setStep((s) => s + 1);
+    } else {
+      try {
+        const skillLabel = skillLevels.find((s) => s.id === skill)?.label ?? "Home Cook";
+        const regionNames = regs
+          .map((id) => regions.find((r) => r.id === id)?.name)
+          .filter(Boolean)
+          .join(", ");
+        const dietLabels = diet
+          .map((id) => diets.find((d) => d.id === id)?.label)
+          .filter(Boolean)
+          .join(", ");
+        const nextBio = `${skillLabel} chef · obsessed with ${regionNames} flavors. Dietary style: ${dietLabels}.`;
+
+        await updateProfile({ bio: nextBio });
+        toast.success("Preferences saved successfully!");
+      } catch (err) {
+        // Fallback silently if offline
+      }
+      navigate({ to: "/home" });
+    }
   };
   const back = () => (step > 0 ? setStep((s) => s - 1) : navigate({ to: "/auth" }));
 
