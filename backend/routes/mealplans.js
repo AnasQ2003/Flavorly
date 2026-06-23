@@ -40,33 +40,72 @@ router.put('/:id', async (req, res) => {
     const { recipeId, servings, calories, title, chef, image, time } = req.body;
     const pool = await getPool();
 
-    // Verify ownership
+    // Verify ownership or check if it exists
     const check = await pool.request()
       .input('id',      sql.NVarChar, id)
       .input('user_id', sql.Int, req.user.id)
       .query('SELECT id FROM dbo.MealPlans WHERE id = @id AND user_id = @user_id');
-    if (!check.recordset.length) return res.status(404).json({ error: 'Meal plan entry not found.' });
 
-    await pool.request()
-      .input('id',       sql.NVarChar, id)
-      .input('recipeId', sql.NVarChar, recipeId || null)
-      .input('servings', sql.Int,      servings != null ? servings : null)
-      .input('calories', sql.Int,      calories != null ? calories : null)
-      .input('title',    sql.NVarChar, title || null)
-      .input('chef',     sql.NVarChar, chef || null)
-      .input('image',    sql.NVarChar, image || null)
-      .input('time',     sql.NVarChar, time || null)
-      .query(`
-        UPDATE dbo.MealPlans SET
-          recipe_id = COALESCE(@recipeId, recipe_id),
-          servings  = COALESCE(@servings, servings),
-          calories  = COALESCE(@calories, calories),
-          title     = @title,
-          chef      = @chef,
-          image     = @image,
-          time      = @time
-        WHERE id = @id
-      `);
+    if (check.recordset.length === 0) {
+      // Upsert: Create a new meal plan slot
+      let date_offset = 2;
+      let slot = 'breakfast';
+
+      const match = id.match(/^m_(\d+)_(\d+)$/);
+      if (match) {
+        date_offset = parseInt(match[1], 10);
+        const slotIndex = parseInt(match[2], 10);
+        const slots = ['breakfast', 'lunch', 'snack', 'dinner'];
+        slot = slots[slotIndex] || 'breakfast';
+      } else if (id === 'm1') {
+        date_offset = 2; slot = 'breakfast';
+      } else if (id === 'm2') {
+        date_offset = 2; slot = 'lunch';
+      } else if (id === 'm3') {
+        date_offset = 2; slot = 'snack';
+      } else if (id === 'm4') {
+        date_offset = 2; slot = 'dinner';
+      }
+
+      await pool.request()
+        .input('id',          sql.NVarChar, id)
+        .input('user_id',     sql.Int,      req.user.id)
+        .input('date_offset', sql.Int,      date_offset)
+        .input('slot',        sql.NVarChar, slot)
+        .input('recipeId',    sql.NVarChar, recipeId || 'empty')
+        .input('servings',    sql.Int,      servings != null ? servings : 2)
+        .input('calories',    sql.Int,      calories != null ? calories : 0)
+        .input('title',       sql.NVarChar, title || '')
+        .input('chef',        sql.NVarChar, chef || '')
+        .input('image',       sql.NVarChar, image || '')
+        .input('time',        sql.NVarChar, time || '')
+        .query(`
+          INSERT INTO dbo.MealPlans (id, user_id, date_offset, slot, recipe_id, servings, calories, title, chef, image, time)
+          VALUES (@id, @user_id, @date_offset, @slot, @recipeId, @servings, @calories, @title, @chef, @image, @time)
+        `);
+    } else {
+      // Standard Update
+      await pool.request()
+        .input('id',       sql.NVarChar, id)
+        .input('recipeId', sql.NVarChar, recipeId || null)
+        .input('servings', sql.Int,      servings != null ? servings : null)
+        .input('calories', sql.Int,      calories != null ? calories : null)
+        .input('title',    sql.NVarChar, title || null)
+        .input('chef',     sql.NVarChar, chef || null)
+        .input('image',    sql.NVarChar, image || null)
+        .input('time',     sql.NVarChar, time || null)
+        .query(`
+          UPDATE dbo.MealPlans SET
+            recipe_id = COALESCE(@recipeId, recipe_id),
+            servings  = COALESCE(@servings, servings),
+            calories  = COALESCE(@calories, calories),
+            title     = COALESCE(@title, title),
+            chef      = COALESCE(@chef, chef),
+            image     = COALESCE(@image, image),
+            time      = COALESCE(@time, time)
+          WHERE id = @id
+        `);
+    }
 
     const updated = await pool.request()
       .input('id', sql.NVarChar, id)
