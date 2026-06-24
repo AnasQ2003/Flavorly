@@ -1,5 +1,6 @@
 import type { ReactNode } from "react";
 import { useRouterState } from "@tanstack/react-router";
+import { useEffect } from "react";
 
 /**
  * Phone-frame wrapper. Cylindrical (rotateY) page transition keyed by pathname,
@@ -7,6 +8,11 @@ import { useRouterState } from "@tanstack/react-router";
  */
 export function PhoneFrame({ children }: { children: ReactNode }) {
   const pathname = useRouterState({ select: (s) => s.location.pathname });
+
+  // Scroll to top when route changes
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [pathname]);
 
   return (
     <div className="relative h-[100dvh] w-full flex items-stretch justify-center sm:py-6 overflow-hidden bg-[linear-gradient(135deg,oklch(0.97_0.04_55),oklch(0.96_0.05_85),oklch(0.95_0.05_145),oklch(0.96_0.05_25))] animate-gradient">
