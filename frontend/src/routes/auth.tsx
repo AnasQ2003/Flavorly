@@ -113,7 +113,7 @@ function Auth() {
             <span className="font-display text-4xl text-white drop-shadow-md">Cultivate</span>
           </div>
 
-          <div className="mt-6 animate-slide-up">
+          <div className="mt-6 animate-slide-up text-center">
             <h2 className="font-display text-[34px] leading-tight text-white drop-shadow-md text-balance">
               {mode === "login" ? "Welcome back\nto the table." : "Pull up a chair."}
             </h2>
@@ -124,6 +124,15 @@ function Auth() {
             </p>
           </div>
         </div>
+
+        {/* Flashy message card - floats above content */}
+        {flashyMessage && (
+          <div className="relative z-20 mx-5 mt-4 p-4 rounded-2xl bg-white/95 backdrop-blur-xl ring-2 ring-tangerine/50 shadow-[0_20px_50px_-15px_rgba(255,150,50,0.5)] animate-slide-down">
+            <p className="text-sm text-tangerine font-semibold text-center animate-pulse">
+              {flashyMessage}
+            </p>
+          </div>
+        )}
 
         {/* Card with form — sits above the gradient */}
         <div className="relative z-10 mx-5 mt-2 mb-5 rounded-[32px] bg-card/95 backdrop-blur-2xl ring-1 ring-white/60 shadow-[0_30px_70px_-20px_rgba(120,60,20,0.4)] p-6 animate-slide-up [animation-delay:120ms]">
@@ -155,12 +164,6 @@ function Auth() {
           {error && (
             <div className="mt-3 p-3 rounded-xl bg-spice/10 border border-spice/20 text-xs text-spice font-semibold text-center animate-shake">
               {error}
-            </div>
-          )}
-
-          {flashyMessage && (
-            <div className="mt-3 p-3 rounded-xl bg-gradient-to-r from-saffron/20 to-tangerine/20 border border-tangerine/30 text-xs text-tangerine font-semibold text-center animate-pulse">
-              {flashyMessage}
             </div>
           )}
 
