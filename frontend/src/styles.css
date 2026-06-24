@@ -260,18 +260,18 @@
   position: relative;
   isolation: isolate;
   box-shadow:
-    0 0 0 1px color-mix(in oklab, var(--primary) 35%, transparent),
-    0 0 32px -4px color-mix(in oklab, var(--primary) 50%, transparent),
-    0 1px 0 0 color-mix(in oklab, white 70%, transparent) inset,
-    0 -10px 30px -12px color-mix(in oklab, var(--primary) 60%, transparent) inset;
+    0 0 0 3px color-mix(in oklab, var(--primary) 60%, transparent),
+    0 0 50px -4px color-mix(in oklab, var(--primary) 70%, transparent),
+    0 3px 0 0 color-mix(in oklab, white 80%, transparent) inset,
+    0 -15px 40px -12px color-mix(in oklab, var(--primary) 75%, transparent) inset;
   transition: box-shadow 0.3s ease;
 }
 @utility glow-card-enhanced-hover {
   box-shadow:
-    0 0 0 1px color-mix(in oklab, var(--primary) 45%, transparent),
-    0 0 40px -4px color-mix(in oklab, var(--primary) 60%, transparent),
-    0 1px 0 0 color-mix(in oklab, white 80%, transparent) inset,
-    0 -10px 30px -12px color-mix(in oklab, var(--primary) 70%, transparent) inset;
+    0 0 0 4px color-mix(in oklab, var(--primary) 70%, transparent),
+    0 0 60px -4px color-mix(in oklab, var(--primary) 80%, transparent),
+    0 4px 0 0 color-mix(in oklab, white 90%, transparent) inset,
+    0 -18px 48px -12px color-mix(in oklab, var(--primary) 85%, transparent) inset;
 }
 @utility sheen-overlay {
   position: relative;
