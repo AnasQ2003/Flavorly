@@ -13,8 +13,8 @@ const right = [
 export function BottomTabBar() {
   const pathname = useRouterState({ select: (s) => s.location.pathname });
   return (
-    <nav className="absolute bottom-3 inset-x-3 z-30">
-      <div className="relative rounded-[28px] bg-[linear-gradient(135deg,oklch(0.22_0.04_45),oklch(0.28_0.07_25),oklch(0.22_0.04_45))] animate-gradient text-background shadow-[0_20px_60px_-15px_rgba(0,0,0,0.5)] ring-1 ring-white/10 backdrop-blur-xl px-2 glow-soft sheen-overlay">
+    <nav className="absolute bottom-3 inset-x-3 z-30 overflow-visible">
+      <div className="relative rounded-[28px] bg-[linear-gradient(135deg,oklch(0.22_0.04_45),oklch(0.28_0.07_25),oklch(0.22_0.04_45))] animate-gradient text-background shadow-[0_20px_60px_-15px_rgba(0,0,0,0.5)] ring-1 ring-white/10 backdrop-blur-xl px-2 glow-soft sheen-overlay overflow-visible">
         <span aria-hidden className="pointer-events-none absolute inset-x-6 -top-px h-px bg-gradient-to-r from-transparent via-saffron/70 to-transparent" />
         <div className="grid grid-cols-5 items-center h-16">
           {left.map((t) => (
