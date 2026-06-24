@@ -67,14 +67,16 @@ function Auth() {
         <div className="size-12 bg-leaf/70 rounded-2xl absolute top-72 left-4 animate-tilt-3d [animation-delay:500ms]" />
         <span className="absolute top-28 left-6 text-3xl animate-float drop-shadow-lg">🥑</span>
         <span className="absolute top-44 right-14 text-2xl animate-float [animation-delay:600ms] drop-shadow-lg">🍅</span>
-        <span className="absolute bottom-40 left-10 text-2xl animate-float [animation-delay:300ms] drop-shadow-lg">🌿</span>
-        <span className="absolute bottom-24 right-6 text-3xl animate-float [animation-delay:900ms] drop-shadow-lg">🍋</span>
+        <span className="absolute bottom-56 left-10 text-2xl animate-float [animation-delay:300ms] drop-shadow-lg">🌿</span>
+        <span className="absolute bottom-48 right-6 text-3xl animate-float [animation-delay:900ms] drop-shadow-lg">🍋</span>
         <span className="absolute top-36 left-16 text-2xl animate-float [animation-delay:1200ms] drop-shadow-lg">🥕</span>
         <span className="absolute top-52 right-8 text-2xl animate-float [animation-delay:1500ms] drop-shadow-lg">🍆</span>
-        <span className="absolute bottom-52 left-4 text-2xl animate-float [animation-delay:1800ms] drop-shadow-lg">🥦</span>
-        <span className="absolute bottom-36 right-16 text-2xl animate-float [animation-delay:2100ms] drop-shadow-lg">🌶️</span>
+        <span className="absolute bottom-64 left-4 text-2xl animate-float [animation-delay:1800ms] drop-shadow-lg">🥦</span>
+        <span className="absolute bottom-60 right-16 text-2xl animate-float [animation-delay:2100ms] drop-shadow-lg">🌶️</span>
         <span className="absolute top-64 left-12 text-xl animate-float [animation-delay:2400ms] drop-shadow-lg">🥬</span>
-        <span className="absolute bottom-48 right-10 text-xl animate-float [animation-delay:2700ms] drop-shadow-lg">🧅</span>
+        <span className="absolute bottom-72 right-10 text-xl animate-float [animation-delay:2700ms] drop-shadow-lg">🧅</span>
+        <span className="absolute top-72 right-20 text-xl animate-float [animation-delay:3000ms] drop-shadow-lg">🥒</span>
+        <span className="absolute bottom-80 left-16 text-xl animate-float [animation-delay:3300ms] drop-shadow-lg">🫑</span>
 
         {/* Header — over the gradient */}
         <div className="relative z-10 px-7 pt-12 pb-4">
@@ -82,7 +84,7 @@ function Auth() {
             <div className="size-12 bg-white/95 backdrop-blur text-primary rounded-2xl grid place-items-center shadow-warm ring-2 ring-white/60 animate-logo-bounce">
               <ChefHat className="size-6" strokeWidth={1.8} />
             </div>
-            <span className="font-display text-2xl text-white drop-shadow-md">Cultivate</span>
+            <span className="font-display text-4xl text-white drop-shadow-md">Cultivate</span>
           </div>
 
           <div className="mt-6 animate-slide-up">
