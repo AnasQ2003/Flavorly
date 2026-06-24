@@ -125,9 +125,9 @@ function Auth() {
           </div>
         </div>
 
-        {/* Flashy message card - fixed overlay */}
+        {/* Flashy message card - toast notification at bottom */}
         {flashyMessage && (
-          <div className="fixed top-4 left-1/2 -translate-x-1/2 z-50 mx-5 p-4 rounded-2xl bg-white/95 backdrop-blur-xl ring-2 ring-tangerine/50 shadow-[0_20px_50px_-15px_rgba(255,150,50,0.5)] animate-slide-down max-w-[calc(100%-2.5rem)]">
+          <div className="fixed bottom-6 left-1/2 -translate-x-1/2 z-50 px-5 py-3 rounded-xl bg-white/95 backdrop-blur-xl ring-2 ring-tangerine/50 shadow-[0_15px_40px_-10px_rgba(255,150,50,0.5)] animate-slide-up max-w-[calc(100%-2.5rem)]">
             <p className="text-sm text-tangerine font-semibold text-center animate-pulse">
               {flashyMessage}
             </p>
