@@ -256,6 +256,23 @@
     0 0 22px -6px color-mix(in oklab, var(--primary) 45%, transparent),
     0 8px 28px -12px color-mix(in oklab, var(--primary) 30%, transparent);
 }
+@utility glow-card-enhanced {
+  position: relative;
+  isolation: isolate;
+  box-shadow:
+    0 0 0 1px color-mix(in oklab, var(--primary) 35%, transparent),
+    0 0 32px -4px color-mix(in oklab, var(--primary) 50%, transparent),
+    0 1px 0 0 color-mix(in oklab, white 70%, transparent) inset,
+    0 -10px 30px -12px color-mix(in oklab, var(--primary) 60%, transparent) inset;
+  transition: box-shadow 0.3s ease;
+}
+@utility glow-card-enhanced-hover {
+  box-shadow:
+    0 0 0 1px color-mix(in oklab, var(--primary) 45%, transparent),
+    0 0 40px -4px color-mix(in oklab, var(--primary) 60%, transparent),
+    0 1px 0 0 color-mix(in oklab, white 80%, transparent) inset,
+    0 -10px 30px -12px color-mix(in oklab, var(--primary) 70%, transparent) inset;
+}
 @utility sheen-overlay {
   position: relative;
   overflow: hidden;

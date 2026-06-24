@@ -72,7 +72,7 @@ function Categories() {
                   key={c.slug}
                   to="/category/$slug"
                   params={{ slug: c.slug }}
-                  className="relative aspect-square rounded-3xl overflow-hidden ring-1 ring-border bg-card hover-lift animate-pop shadow-soft"
+                  className="relative aspect-square rounded-3xl overflow-hidden ring-1 ring-border bg-card hover-lift animate-pop glow-card-enhanced"
                   style={{ animationDelay: `${i * 80}ms` }}
                 >
                   {sample && (
@@ -104,7 +104,7 @@ function Categories() {
           </div>
 
           {/* Region search */}
-          <div className="flex items-center gap-3 px-4 h-11 bg-card ring-1 ring-border rounded-2xl focus-within:ring-2 focus-within:ring-primary shadow-soft mb-3">
+          <div className="flex items-center gap-3 px-4 h-11 bg-card ring-1 ring-border rounded-2xl focus-within:ring-2 focus-within:ring-primary glow-card-enhanced mb-3">
             <SearchIcon className="size-4 text-primary" />
             <input
               value={regionQ}

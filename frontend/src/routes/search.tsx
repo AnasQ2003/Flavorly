@@ -90,7 +90,7 @@ function Search() {
         <p className="text-sm text-muted-foreground mt-1">What are you craving?</p>
 
         <div className="mt-4 flex items-center gap-2 animate-slide-in-right">
-          <div className="flex-1 flex items-center gap-3 px-4 h-12 bg-card ring-1 ring-border rounded-2xl focus-within:ring-2 focus-within:ring-primary shadow-soft transition">
+          <div className="flex-1 flex items-center gap-3 px-4 h-12 bg-card ring-1 ring-border rounded-2xl focus-within:ring-2 focus-within:ring-primary glow-card-enhanced transition">
             <SearchIcon className="size-5 text-primary" />
             <input
               value={q}
@@ -125,7 +125,7 @@ function Search() {
         {/* Region quick picker — separate option */}
         <button
           onClick={() => setShowRegions((v) => !v)}
-          className={`mt-3 w-full flex items-center gap-3 px-4 h-12 rounded-2xl shadow-soft transition active:scale-[0.98] animate-slide-in-right ${activeRegion ? "bg-gradient-to-r from-spice to-berry text-white" : "bg-card ring-1 ring-border text-foreground"}`}
+          className={`mt-3 w-full flex items-center gap-3 px-4 h-12 rounded-2xl transition active:scale-[0.98] animate-slide-in-right ${activeRegion ? "bg-gradient-to-r from-spice to-berry text-white" : "bg-card ring-1 ring-border text-foreground glow-card-enhanced"}`}
         >
           <Globe2 className="size-5" />
           <span className="text-sm font-semibold flex-1 text-left">
@@ -154,7 +154,7 @@ function Search() {
             ))}
             <Link
               to="/categories"
-              className="rounded-2xl p-3 bg-card ring-1 ring-border grid place-items-center text-center hover-lift"
+              className="rounded-2xl p-3 bg-card ring-1 ring-border grid place-items-center text-center hover-lift glow-card-enhanced"
             >
               <MapPin className="size-4 text-primary" />
               <p className="text-[10px] font-semibold mt-1">See all</p>
@@ -186,7 +186,7 @@ function Search() {
         )}
 
         {showFilters && (
-          <div className="mt-3 p-4 rounded-3xl bg-card ring-1 ring-border space-y-4 animate-slide-up shadow-soft">
+          <div className="mt-3 p-4 rounded-3xl bg-card ring-1 ring-border space-y-4 animate-slide-up glow-card-enhanced">
             <FilterRow label="Difficulty" Icon={ChefHat}>
               {difficulties.map((d) => (
                 <Chip key={d.value} active={diff === d.value} onClick={() => setDiff(d.value)}>
@@ -261,7 +261,7 @@ function Search() {
                   key={r.id}
                   to="/recipe/$id"
                   params={{ id: r.id }}
-                  className="flex gap-3 items-center bg-card p-2.5 rounded-2xl ring-1 ring-border hover-lift animate-slide-up shadow-soft"
+                  className="flex gap-3 items-center bg-card p-2.5 rounded-2xl ring-1 ring-border hover-lift animate-slide-up glow-card-enhanced"
                   style={{ animationDelay: `${i * 50}ms` }}
                 >
                   <img src={r.image} alt="" className="size-20 rounded-xl object-cover shrink-0" loading="lazy" />
@@ -289,7 +289,7 @@ function Search() {
                     key={`${d.regionId}-${d.name}`}
                     to="/region/$id/dish/$dish"
                     params={{ id: d.regionId, dish: encodeURIComponent(d.name) }}
-                    className="flex items-center gap-3 p-2.5 bg-card rounded-2xl ring-1 ring-border hover-lift animate-slide-up shadow-soft"
+                    className="flex items-center gap-3 p-2.5 bg-card rounded-2xl ring-1 ring-border hover-lift animate-slide-up glow-card-enhanced"
                     style={{ animationDelay: `${i * 40}ms` }}
                   >
                     <div className="size-14 shrink-0 rounded-xl bg-gradient-to-br from-saffron/30 to-tangerine/20 grid place-items-center text-3xl ring-1 ring-tangerine/30">

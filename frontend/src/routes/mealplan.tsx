@@ -142,7 +142,7 @@ function MealPlan() {
                   className={`shrink-0 w-16 py-3 rounded-2xl flex flex-col items-center transition-all ring-1 ${
                     active
                       ? "bg-gradient-to-br from-spice via-tangerine to-saffron text-primary-foreground ring-tangerine shadow-warm scale-[1.04]"
-                      : "bg-card ring-border text-foreground hover:ring-primary/40"
+                      : "bg-card ring-border text-foreground hover:ring-primary/40 glow-card-enhanced"
                   }`}
                 >
                   <span className="text-[10px] uppercase tracking-widest opacity-80">{w.d}</span>
@@ -213,7 +213,7 @@ function MealPlan() {
                   <Link
                     to={r.id === "snack-yogurt" ? "/mealplan" : "/recipe/$id"}
                     params={r.id === "snack-yogurt" ? {} : { id: r.id }}
-                    className="block relative overflow-hidden rounded-3xl bg-card ring-1 ring-border shadow-soft hover-lift"
+                    className="block relative overflow-hidden rounded-3xl bg-card ring-1 ring-border hover-lift glow-card-enhanced"
                   >
                     <div className="flex gap-3 items-stretch p-3">
                       <div className="relative shrink-0">
@@ -247,7 +247,7 @@ function MealPlan() {
                 ) : (
                   <Link
                     to="/search"
-                    className="block p-5 text-center bg-card ring-1 ring-border rounded-3xl text-muted-foreground hover:text-primary hover:border-primary border border-dashed transition"
+                    className="block p-5 text-center bg-card ring-1 ring-border rounded-3xl text-muted-foreground hover:text-primary hover:border-primary border border-dashed transition glow-card-enhanced"
                   >
                     <Plus className="size-4 mx-auto mb-1" />
                     <span className="text-xs font-semibold">Plan {slot.name}</span>
@@ -257,7 +257,7 @@ function MealPlan() {
             );
           })}
 
-          <button className="w-full p-4 rounded-3xl border-2 border-dashed border-border bg-card/50 text-muted-foreground font-medium flex items-center justify-center gap-2 hover:border-primary hover:text-primary transition animate-slide-up">
+          <button className="w-full p-4 rounded-3xl border-2 border-dashed border-border bg-card/50 text-muted-foreground font-medium flex items-center justify-center gap-2 hover:border-primary hover:text-primary transition animate-slide-up glow-card-enhanced">
             <Plus className="size-4" />
             Add dessert or drink pairing
           </button>

@@ -56,7 +56,7 @@ function Favorites() {
               className={`shrink-0 px-4 py-2 rounded-full text-sm font-semibold transition-all ${
                 active === f
                   ? "bg-gradient-to-r from-primary to-tangerine text-white shadow-warm scale-105"
-                  : "bg-card text-foreground ring-1 ring-border"
+                  : "bg-card text-foreground ring-1 ring-border glow-card-enhanced"
               }`}
             >
               {f}
@@ -70,7 +70,7 @@ function Favorites() {
               key={r.id}
               to="/recipe/$id"
               params={{ id: r.id }}
-              className="bg-card rounded-3xl overflow-hidden ring-1 ring-border hover-lift animate-pop relative shadow-soft"
+              className="bg-card rounded-3xl overflow-hidden ring-1 ring-border hover-lift animate-pop relative glow-card-enhanced"
               style={{ animationDelay: `${i * 70}ms` }}
             >
               <div className="relative">

@@ -158,7 +158,7 @@ function Shopping() {
               value={query}
               onChange={(e) => setQuery(e.target.value)}
               placeholder="Search ingredients…"
-              className="w-full bg-card ring-1 ring-border rounded-2xl pl-10 pr-4 py-3 text-sm placeholder:text-muted-foreground focus:ring-primary focus:outline-none transition"
+              className="w-full bg-card ring-1 ring-border rounded-2xl pl-10 pr-4 py-3 text-sm placeholder:text-muted-foreground focus:ring-primary focus:outline-none transition glow-card-enhanced"
             />
           </div>
           <div className="flex gap-2 overflow-x-auto no-scrollbar -mx-5 px-5 pb-1">
@@ -171,7 +171,7 @@ function Shopping() {
                   className={`shrink-0 px-4 py-2 rounded-full text-xs font-semibold ring-1 transition-all ${
                     on
                       ? "bg-foreground text-background ring-foreground shadow-warm"
-                      : "bg-card text-foreground ring-border hover:ring-primary/40"
+                      : "bg-card text-foreground ring-border hover:ring-primary/40 glow-card-enhanced"
                   }`}
                 >
                   {a === "all" ? "All aisles" : a}
@@ -202,7 +202,7 @@ function Shopping() {
                   {list.map((it, i) => (
                     <li
                       key={it.id}
-                      className={`flex items-center gap-3 bg-card ring-1 ${meta.ring} rounded-2xl p-3.5 shadow-soft hover-lift animate-slide-in-right transition`}
+                      className={`flex items-center gap-3 bg-card ring-1 ${meta.ring} rounded-2xl p-3.5 hover-lift animate-slide-in-right transition glow-card-enhanced`}
                       style={{ animationDelay: `${i * 40}ms` }}
                     >
                       <button
@@ -245,7 +245,7 @@ function Shopping() {
 
           {/* Expandable Add Custom Item Form */}
           {showAdd ? (
-            <form onSubmit={handleAddCustom} className="bg-card ring-1 ring-border rounded-3xl p-5 space-y-4 animate-scale-in">
+            <form onSubmit={handleAddCustom} className="bg-card ring-1 ring-border rounded-3xl p-5 space-y-4 animate-scale-in glow-card-enhanced">
               <div className="flex justify-between items-center pb-2 border-b border-border">
                 <h4 className="font-semibold text-sm">Add custom item</h4>
                 <button
@@ -327,7 +327,7 @@ function Shopping() {
           ) : (
             <button
               onClick={() => setShowAdd(true)}
-              className="w-full p-4 rounded-3xl border-2 border-dashed border-border bg-card/50 text-muted-foreground font-medium flex items-center justify-center gap-2 hover:border-primary hover:text-primary transition"
+              className="w-full p-4 rounded-3xl border-2 border-dashed border-border bg-card/50 text-muted-foreground font-medium flex items-center justify-center gap-2 hover:border-primary hover:text-primary transition glow-card-enhanced"
             >
               <Plus className="size-4" />
               Add custom item

@@ -62,7 +62,7 @@ function Home() {
               key={c.slug}
               to="/category/$slug"
               params={{ slug: c.slug }}
-              className="shrink-0 px-4 py-2 bg-card text-foreground rounded-full text-sm font-medium ring-1 ring-border hover-lift flex items-center gap-1.5"
+              className="shrink-0 px-4 py-2 bg-card text-foreground rounded-full text-sm font-medium ring-1 ring-border hover-lift flex items-center gap-1.5 glow-card-enhanced"
             >
               <span>{c.emoji}</span>
               {c.label}
@@ -101,11 +101,11 @@ function Home() {
             ))}
 
             <button onClick={(e) => { e.preventDefault(); go(-1); }} aria-label="Previous"
-              className="absolute left-2 top-1/2 -translate-y-1/2 z-20 size-8 grid place-items-center rounded-full bg-card/85 backdrop-blur text-foreground ring-1 ring-border active:scale-90 transition">
+              className="absolute left-2 top-1/2 -translate-y-1/2 z-20 size-8 grid place-items-center rounded-full bg-card/85 backdrop-blur text-foreground ring-1 ring-border active:scale-90 transition glow-card-enhanced">
               <ChevronLeft className="size-4" />
             </button>
             <button onClick={(e) => { e.preventDefault(); go(1); }} aria-label="Next"
-              className="absolute right-2 top-1/2 -translate-y-1/2 z-20 size-8 grid place-items-center rounded-full bg-card/85 backdrop-blur text-foreground ring-1 ring-border active:scale-90 transition">
+              className="absolute right-2 top-1/2 -translate-y-1/2 z-20 size-8 grid place-items-center rounded-full bg-card/85 backdrop-blur text-foreground ring-1 ring-border active:scale-90 transition glow-card-enhanced">
               <ChevronRight className="size-4" />
             </button>
 
@@ -161,7 +161,7 @@ function Home() {
           <div className="grid grid-cols-2 gap-3">
             {trending.map((r, i) => (
               <Link key={r.id} to="/recipe/$id" params={{ id: r.id }}
-                className="bg-card rounded-3xl overflow-hidden ring-1 ring-border hover-lift animate-pop"
+                className="bg-card rounded-3xl overflow-hidden ring-1 ring-border hover-lift animate-pop glow-card-enhanced"
                 style={{ animationDelay: `${i * 80}ms` }}>
                 <div className="relative">
                   <img src={r.image} alt={r.title} className="w-full aspect-square object-cover" loading="lazy" />
@@ -185,7 +185,7 @@ function Home() {
           <div className="flex gap-3 overflow-x-auto no-scrollbar -mx-5 px-5 pb-1">
             {quickPicks.map((r, i) => (
               <Link key={r.id} to="/recipe/$id" params={{ id: r.id }}
-                className="shrink-0 w-44 rounded-3xl overflow-hidden bg-card ring-1 ring-border hover-lift animate-pop"
+                className="shrink-0 w-44 rounded-3xl overflow-hidden bg-card ring-1 ring-border hover-lift animate-pop glow-card-enhanced"
                 style={{ animationDelay: `${i * 60}ms` }}>
                 <div className="relative h-28">
                   <img src={r.image} alt="" className="size-full object-cover" loading="lazy" />
@@ -209,7 +209,7 @@ function Home() {
           </div>
           <div className="grid grid-cols-2 gap-2.5">
             {cookingTips.map((t, i) => (
-              <div key={t.title} className="rounded-2xl p-3 bg-card ring-1 ring-border shadow-soft animate-pop" style={{ animationDelay: `${i * 60}ms` }}>
+              <div key={t.title} className="rounded-2xl p-3 bg-card ring-1 ring-border animate-pop glow-card-enhanced" style={{ animationDelay: `${i * 60}ms` }}>
                 <p className="text-2xl">{t.icon}</p>
                 <p className="font-semibold text-sm mt-1.5">{t.title}</p>
                 <p className="text-[11px] text-muted-foreground mt-1 leading-snug">{t.body}</p>
@@ -227,7 +227,7 @@ function Home() {
           <div className="space-y-3">
             {blogs.map((b) => (
               <Link key={b.id} to="/blog/$id" params={{ id: b.id }}
-                className="flex gap-3 items-center bg-card p-3 rounded-2xl ring-1 ring-border hover-lift">
+                className="flex gap-3 items-center bg-card p-3 rounded-2xl ring-1 ring-border hover-lift glow-card-enhanced">
                 <img src={b.image} alt="" className="size-20 rounded-xl object-cover shrink-0" loading="lazy" />
                 <div className="min-w-0">
                   <p className="text-[10px] uppercase tracking-widest text-primary font-bold">{b.category}</p>

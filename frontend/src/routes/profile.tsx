@@ -156,7 +156,7 @@ function Profile() {
               <Link
                 key={r.id}
                 to={r.link as any}
-                className="relative aspect-square rounded-2xl overflow-hidden ring-1 ring-border hover-lift animate-pop shadow-soft"
+                className="relative aspect-square rounded-2xl overflow-hidden ring-1 ring-border hover-lift animate-pop glow-card-enhanced"
                 style={{ animationDelay: `${i * 50}ms` }}
               >
                 <img src={r.image} alt="" className="size-full object-cover" loading="lazy" />
