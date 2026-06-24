@@ -69,10 +69,16 @@ function Auth() {
         <span className="absolute top-44 right-14 text-2xl animate-float [animation-delay:600ms] drop-shadow-lg">🍅</span>
         <span className="absolute bottom-40 left-10 text-2xl animate-float [animation-delay:300ms] drop-shadow-lg">🌿</span>
         <span className="absolute bottom-24 right-6 text-3xl animate-float [animation-delay:900ms] drop-shadow-lg">🍋</span>
+        <span className="absolute top-36 left-16 text-2xl animate-float [animation-delay:1200ms] drop-shadow-lg">🥕</span>
+        <span className="absolute top-52 right-8 text-2xl animate-float [animation-delay:1500ms] drop-shadow-lg">🍆</span>
+        <span className="absolute bottom-52 left-4 text-2xl animate-float [animation-delay:1800ms] drop-shadow-lg">🥦</span>
+        <span className="absolute bottom-36 right-16 text-2xl animate-float [animation-delay:2100ms] drop-shadow-lg">🌶️</span>
+        <span className="absolute top-64 left-12 text-xl animate-float [animation-delay:2400ms] drop-shadow-lg">🥬</span>
+        <span className="absolute bottom-48 right-10 text-xl animate-float [animation-delay:2700ms] drop-shadow-lg">🧅</span>
 
         {/* Header — over the gradient */}
         <div className="relative z-10 px-7 pt-12 pb-4">
-          <div className="flex items-center gap-2 animate-slide-in-left">
+          <div className="flex items-center justify-center gap-2 animate-slide-in-left">
             <div className="size-12 bg-white/95 backdrop-blur text-primary rounded-2xl grid place-items-center shadow-warm ring-2 ring-white/60 animate-logo-bounce">
               <ChefHat className="size-6" strokeWidth={1.8} />
             </div>
