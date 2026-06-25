@@ -124,10 +124,41 @@ export const useFlavorStore = create<FlavorState>()(
       },
 
       updateMealPlanSlot: async (id, patch) => {
-        // Optimistic update
-        set((s) => ({
-          mealPlans: s.mealPlans.map((mp) => (mp.id === id ? { ...mp, ...patch } : mp))
-        }));
+        const exists = get().mealPlans.some((mp) => mp.id === id);
+        if (exists) {
+          set((s) => ({
+            mealPlans: s.mealPlans.map((mp) => (mp.id === id ? { ...mp, ...patch } : mp))
+          }));
+        } else {
+          // Parse slot and day from id
+          let dateOffset = 2;
+          let slot = 'breakfast';
+          if (id.startsWith('m_')) {
+            const parts = id.split('_'); // ['m', 'day', 'slotIndex']
+            dateOffset = parseInt(parts[1]) || 0;
+            const slotIndex = parseInt(parts[2]) || 0;
+            slot = ['breakfast', 'lunch', 'snack', 'dinner'][slotIndex] || 'breakfast';
+          } else {
+            // "m1" to "m4" (Wed/dayOffset 2)
+            const slotIndex = parseInt(id.replace('m', '')) - 1;
+            slot = ['breakfast', 'lunch', 'snack', 'dinner'][slotIndex] || 'breakfast';
+          }
+          const newItem: ApiMealPlan = {
+            id,
+            dateOffset,
+            slot,
+            recipeId: patch.recipeId || 'empty',
+            servings: patch.servings || 1,
+            title: patch.title,
+            chef: patch.chef,
+            image: patch.image,
+            time: patch.time,
+            calories: patch.calories,
+          };
+          set((s) => ({
+            mealPlans: [...s.mealPlans, newItem]
+          }));
+        }
 
         if (getToken()) {
           try {

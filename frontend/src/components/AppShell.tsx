@@ -4,6 +4,7 @@ import { TopNav } from "./TopNav";
 import { BottomTabBar } from "./BottomTabBar";
 import { Drawer } from "./Drawer";
 import { useRouterState } from "@tanstack/react-router";
+import { Footer } from "./Footer";
 
 type Props = {
   children: ReactNode;
@@ -28,6 +29,7 @@ export function AppShell({ children, showTopNav = true, showTabBar = true, greet
         className={`flex-1 min-h-0 overflow-y-auto no-scrollbar animate-fade-in ${showTabBar ? "pb-28" : ""}`}
       >
         {children}
+        <Footer />
       </main>
       {showTabBar && <BottomTabBar />}
       <Drawer open={drawerOpen} onClose={() => setDrawerOpen(false)} />

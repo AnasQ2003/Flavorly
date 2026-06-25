@@ -99,7 +99,7 @@ export function Drawer({ open, onClose }: { open: boolean; onClose: () => void }
           <DrawerItem to="/privacy" Icon={Shield} label="Privacy Policy" tint="leaf" onClose={onClose} />
         </nav>
 
-        <div className="p-5">
+        <div className="p-5 pt-0 mt-auto flex flex-col items-center gap-3">
           <button
             onClick={() => {
               logout();
@@ -112,6 +112,17 @@ export function Drawer({ open, onClose }: { open: boolean; onClose: () => void }
             <LogOut className="size-4" />
             Sign Out
           </button>
+
+          <div className="flex flex-col items-center gap-1 text-center mt-1">
+            <div className="flex items-center gap-1.5 text-muted-foreground/60 text-[10px] font-bold uppercase tracking-wider">
+              <span>v1.0.2</span>
+              <span className="size-1 rounded-full bg-muted-foreground/35" />
+              <span>Beta Build</span>
+            </div>
+            <p className="text-[9px] text-muted-foreground/50">
+              © 2026 Cultivate Kitchen Inc.
+            </p>
+          </div>
         </div>
       </aside>
     </div>

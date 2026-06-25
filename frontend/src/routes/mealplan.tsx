@@ -11,6 +11,7 @@ import {
   Sunrise, Sun, Moon, Flame, Apple, Beef, Wheat, Droplet,
   Sparkles, Plus, ChevronRight, Clock, Users, ChefHat,
 } from "lucide-react";
+import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription } from "@/components/ui/dialog";
 
 export const Route = createFileRoute("/mealplan")({
   beforeLoad: () => requireAuth(),
@@ -37,6 +38,7 @@ const slots = [
 
 function MealPlan() {
   const [day, setDay] = useState(2); // Wed by default
+  const [pairingOpen, setPairingOpen] = useState(false);
 
   const mealPlans = useFlavorStore((s) => s.mealPlans);
   const updateMealPlanSlot = useFlavorStore((s) => s.updateMealPlanSlot);
@@ -257,7 +259,10 @@ function MealPlan() {
             );
           })}
 
-          <button className="w-full p-4 rounded-3xl border-2 border-dashed border-border bg-card/50 text-muted-foreground font-medium flex items-center justify-center gap-2 hover:border-primary hover:text-primary transition animate-slide-up glow-card-enhanced">
+          <button 
+            onClick={() => setPairingOpen(true)}
+            className="w-full p-4 rounded-3xl border-2 border-dashed border-border bg-card/50 text-muted-foreground font-medium flex items-center justify-center gap-2 hover:border-primary hover:text-primary transition animate-slide-up glow-card-enhanced cursor-pointer"
+          >
             <Plus className="size-4" />
             Add dessert or drink pairing
           </button>
@@ -277,6 +282,88 @@ function MealPlan() {
         </div>
       </main>
       <BottomTabBar />
+
+      <Dialog open={pairingOpen} onOpenChange={setPairingOpen}>
+        <DialogContent className="max-w-[340px] rounded-[32px] p-6 bg-card/95 backdrop-blur-xl border border-border shadow-2xl">
+          <DialogHeader>
+            <DialogTitle className="font-display text-2xl text-center text-foreground">Add Pairing</DialogTitle>
+            <DialogDescription className="text-xs text-center mt-1 text-muted-foreground">
+              Select a chef-recommended dessert or drink pairing for today.
+            </DialogDescription>
+          </DialogHeader>
+          <div className="mt-4 space-y-3">
+            {[
+              {
+                id: "lava-cake",
+                title: "Molten Chocolate Lava Cake",
+                calories: 480,
+                time: "30 min",
+                chef: "Anika Sharma",
+                emoji: "🍰",
+                image: "/src/assets/recipe-dessert.jpg",
+              },
+              {
+                id: "crema-catalana",
+                title: "Crema Catalana",
+                calories: 280,
+                time: "40 min",
+                chef: "Elena Rossi",
+                emoji: "🍮",
+                image: "/src/assets/recipe-dessert.jpg",
+              },
+              {
+                id: "tiramisu",
+                title: "Classic Tiramisu",
+                calories: 320,
+                time: "30 min",
+                chef: "Marco Bellini",
+                emoji: "☕",
+                image: "/src/assets/recipe-dessert.jpg",
+              },
+              {
+                id: "red-wine",
+                title: "Cabernet Sauvignon",
+                calories: 120,
+                time: "5 min",
+                chef: "Sommelier Choice",
+                emoji: "🍷",
+                image: "/src/assets/recipe-dessert.jpg",
+              },
+            ].map((p) => (
+              <button
+                key={p.id}
+                onClick={async () => {
+                  setPairingOpen(false);
+                  const snackSlotId = getMealPlanId(day, 2); // 2 is snack slot
+                  try {
+                    await updateMealPlanSlot(snackSlotId, {
+                      recipeId: p.id,
+                      title: p.title,
+                      chef: p.chef,
+                      time: p.time,
+                      calories: p.calories,
+                      image: p.image,
+                      servings: 1,
+                    });
+                    toast.success(`Successfully planned ${p.title}!`);
+                  } catch {
+                    toast.error("Failed to add pairing.");
+                  }
+                }}
+                className="w-full text-left p-3.5 rounded-2xl bg-card border border-border hover:border-primary hover:bg-primary/5 active:scale-[0.98] transition flex items-center gap-3 glow-card-enhanced cursor-pointer"
+              >
+                <span className="text-3xl shrink-0">{p.emoji}</span>
+                <div className="flex-1 min-w-0">
+                  <p className="font-semibold text-sm leading-tight text-foreground truncate">{p.title}</p>
+                  <p className="text-[10px] text-muted-foreground mt-0.5">
+                    {p.time} · {p.calories} cal · by {p.chef}
+                  </p>
+                </div>
+              </button>
+            ))}
+          </div>
+        </DialogContent>
+      </Dialog>
     </PhoneFrame>
   );
 }
