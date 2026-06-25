@@ -81,7 +81,7 @@ const seedNotifications: ApiNotification[] = [
   { id: 'n8', type: 'recipe', title: 'New regional pack: Southeast Asia', body: '42 new recipes ready to explore.', to: '/region/east-asian', timeLabel: '3d', isRead: true }
 ];
 
-const defaultProfile: ProfileState = {
+export const defaultProfile: ProfileState = {
   name: "Julian Thorne",
   handle: "julian.cooks",
   email: "julian@cultivate.app",

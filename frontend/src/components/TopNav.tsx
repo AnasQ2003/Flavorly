@@ -1,6 +1,7 @@
 import { Link } from "@tanstack/react-router";
 import { Menu, Bell, Search } from "lucide-react";
 import avatar from "@/assets/avatar-chef.jpg";
+import { useFlavorStore } from "@/lib/flavor-store";
 
 type Props = {
   greeting?: string;
@@ -8,7 +9,11 @@ type Props = {
   onMenu: () => void;
 };
 
-export function TopNav({ greeting = "Good evening", name = "Julian", onMenu }: Props) {
+export function TopNav({ greeting = "Good evening", name, onMenu }: Props) {
+  const profile = useFlavorStore((s) => s.profile);
+  const displayName = name || profile.name || "Chef";
+  const firstName = displayName.split(" ")[0];
+
   return (
     <header className="relative px-4 pt-10 pb-3 sticky top-0 z-20">
       <div className="absolute inset-0 bg-gradient-to-b from-tangerine/20 via-surface/90 to-surface/60 backdrop-blur-xl" />
@@ -27,7 +32,7 @@ export function TopNav({ greeting = "Good evening", name = "Julian", onMenu }: P
             {greeting}
           </p>
           <p className="text-sm font-semibold text-foreground truncate leading-tight mt-0.5">
-            {name} 👋
+            {firstName} 👋
           </p>
         </div>
 
@@ -50,9 +55,15 @@ export function TopNav({ greeting = "Good evening", name = "Julian", onMenu }: P
 
         <Link
           to="/profile"
-          className="size-10 rounded-2xl ring-2 ring-saffron overflow-hidden active:scale-90 transition shrink-0"
+          className="size-10 rounded-2xl ring-2 ring-saffron overflow-hidden active:scale-90 transition shrink-0 grid place-items-center bg-muted"
         >
-          <img src={avatar} alt="profile" className="size-full object-cover" loading="lazy" />
+          {profile.avatar ? (
+            <div className="size-full bg-gradient-to-br from-saffron to-spice grid place-items-center text-white text-xs font-bold uppercase">
+              {profile.avatar}
+            </div>
+          ) : (
+            <img src={avatar} alt="profile" className="size-full object-cover" loading="lazy" />
+          )}
         </Link>
       </div>
     </header>

@@ -2,6 +2,7 @@ import { create } from "zustand";
 import { persist } from "zustand/middleware";
 import { apiLogin, apiRegister, apiLogout, type ApiUser } from "./api/auth";
 import { getToken, clearToken } from "./api/client";
+import { useFlavorStore, defaultProfile } from "./flavor-store";
 
 type AuthState = {
   isAuthenticated: boolean;
@@ -92,6 +93,17 @@ export const useAuthStore = create<AuthState>()(
             userAvatar: 'AN',
             premium: true,
           });
+          useFlavorStore.setState({
+            profile: {
+              name: 'Anas',
+              handle: 'anas',
+              email: DEMO_EMAIL,
+              avatar: 'AN',
+              bio: 'Self-taught home chef. Obsessed with slow cooking, sharp knives, and Mediterranean sun.',
+              location: 'Kitchen',
+              premium: true,
+            }
+          });
           return { ok: true };
         }
       },
@@ -131,14 +143,26 @@ export const useAuthStore = create<AuthState>()(
           }
 
           // Network unreachable → optimistic demo sign-up
+          const avatarInitials = name.trim().split(' ').map((w) => w[0]).join('').toUpperCase().slice(0, 2) || "AN";
           set({
             isAuthenticated: true,
             email: email.trim().toLowerCase(),
             userId: 999,
             userName: name.trim(),
             userHandle: email.split('@')[0].toLowerCase(),
-            userAvatar: name.trim().split(' ').map((w) => w[0]).join('').toUpperCase().slice(0, 2),
+            userAvatar: avatarInitials,
             premium: false,
+          });
+          useFlavorStore.setState({
+            profile: {
+              name: name.trim(),
+              handle: email.split('@')[0].toLowerCase(),
+              email: email.trim().toLowerCase(),
+              avatar: avatarInitials,
+              bio: 'A passionate home cook exploring new flavors.',
+              location: 'Kitchen',
+              premium: false,
+            }
           });
           return { ok: true };
         }
@@ -155,6 +179,10 @@ export const useAuthStore = create<AuthState>()(
           userHandle: null,
           userAvatar: null,
           premium: false,
+        });
+        useFlavorStore.setState({
+          profile: defaultProfile,
+          apiSynced: false,
         });
       },
     }),

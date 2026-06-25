@@ -1,4 +1,4 @@
-import { Link } from "@tanstack/react-router";
+import { Link, useNavigate } from "@tanstack/react-router";
 import {
   X,
   User,
@@ -13,8 +13,14 @@ import {
   Sparkles,
 } from "lucide-react";
 import avatar from "@/assets/avatar-chef.jpg";
+import { useFlavorStore } from "@/lib/flavor-store";
+import { useAuthStore } from "@/lib/auth-store";
+import { toast } from "sonner";
 
 export function Drawer({ open, onClose }: { open: boolean; onClose: () => void }) {
+  const navigate = useNavigate();
+  const profile = useFlavorStore((s) => s.profile);
+  const logout = useAuthStore((s) => s.logout);
   if (!open) return null;
   return (
     <div className="absolute inset-0 z-50">
@@ -32,15 +38,23 @@ export function Drawer({ open, onClose }: { open: boolean; onClose: () => void }
             <div className="flex items-center gap-3">
               <div className="relative">
                 <span className="absolute inset-0 rounded-2xl bg-white/30 animate-pulse-ring" />
-                <div className="size-16 rounded-2xl overflow-hidden ring-2 ring-white/70 shadow-xl">
-                  <img src={avatar} alt="" className="size-full object-cover" />
+                <div className="size-16 rounded-2xl overflow-hidden ring-2 ring-white/70 shadow-xl grid place-items-center bg-muted">
+                  {profile.avatar ? (
+                    <div className="size-full bg-gradient-to-br from-saffron to-spice grid place-items-center text-white text-xl font-bold uppercase">
+                      {profile.avatar}
+                    </div>
+                  ) : (
+                    <img src={avatar} alt="" className="size-full object-cover" />
+                  )}
                 </div>
               </div>
               <div>
-                <p className="font-display text-2xl leading-none">Julian Thorne</p>
-                <span className="inline-flex items-center gap-1 mt-1.5 px-2 py-0.5 rounded-full bg-white/25 backdrop-blur text-[10px] font-semibold uppercase tracking-widest">
-                  <Sparkles className="size-3" /> Premium
-                </span>
+                <p className="font-display text-2xl leading-none">{profile.name}</p>
+                {profile.premium && (
+                  <span className="inline-flex items-center gap-1 mt-1.5 px-2 py-0.5 rounded-full bg-white/25 backdrop-blur text-[10px] font-semibold uppercase tracking-widest">
+                    <Sparkles className="size-3" /> Premium
+                  </span>
+                )}
               </div>
             </div>
             <button
@@ -86,14 +100,18 @@ export function Drawer({ open, onClose }: { open: boolean; onClose: () => void }
         </nav>
 
         <div className="p-5">
-          <Link
-            to="/auth"
-            onClick={onClose}
-            className="w-full flex items-center justify-center gap-2 px-4 py-3.5 rounded-2xl bg-destructive/10 text-destructive font-semibold ring-1 ring-destructive/20 hover:bg-destructive/15 active:scale-[0.98] transition"
+          <button
+            onClick={() => {
+              logout();
+              onClose();
+              toast.success("Successfully logged out.");
+              navigate({ to: "/auth" });
+            }}
+            className="w-full flex items-center justify-center gap-2 px-4 py-3.5 rounded-2xl bg-destructive/10 text-destructive font-semibold ring-1 ring-destructive/20 hover:bg-destructive/15 active:scale-[0.98] transition cursor-pointer"
           >
             <LogOut className="size-4" />
             Sign Out
-          </Link>
+          </button>
         </div>
       </aside>
     </div>
