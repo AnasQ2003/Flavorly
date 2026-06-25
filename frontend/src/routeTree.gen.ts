@@ -23,6 +23,7 @@ import { Route as FavoritesRouteImport } from './routes/favorites'
 import { Route as CategoriesRouteImport } from './routes/categories'
 import { Route as AuthRouteImport } from './routes/auth'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as ProfileIndexRouteImport } from './routes/profile.index'
 import { Route as RegionIdRouteImport } from './routes/region.$id'
 import { Route as RecipeIdRouteImport } from './routes/recipe.$id'
 import { Route as ProfileEditRouteImport } from './routes/profile.edit'
@@ -100,6 +101,11 @@ const IndexRoute = IndexRouteImport.update({
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const ProfileIndexRoute = ProfileIndexRouteImport.update({
+  id: '/',
+  path: '/',
+  getParentRoute: () => ProfileRoute,
+} as any)
 const RegionIdRoute = RegionIdRouteImport.update({
   id: '/region/$id',
   path: '/region/$id',
@@ -151,6 +157,7 @@ export interface FileRoutesByFullPath {
   '/profile/edit': typeof ProfileEditRoute
   '/recipe/$id': typeof RecipeIdRoute
   '/region/$id': typeof RegionIdRouteWithChildren
+  '/profile/': typeof ProfileIndexRoute
   '/region/$id/dish/$dish': typeof RegionIdDishDishRoute
 }
 export interface FileRoutesByTo {
@@ -163,7 +170,6 @@ export interface FileRoutesByTo {
   '/notifications': typeof NotificationsRoute
   '/onboarding': typeof OnboardingRoute
   '/privacy': typeof PrivacyRoute
-  '/profile': typeof ProfileRouteWithChildren
   '/search': typeof SearchRoute
   '/settings': typeof SettingsRoute
   '/shopping': typeof ShoppingRoute
@@ -173,6 +179,7 @@ export interface FileRoutesByTo {
   '/profile/edit': typeof ProfileEditRoute
   '/recipe/$id': typeof RecipeIdRoute
   '/region/$id': typeof RegionIdRouteWithChildren
+  '/profile': typeof ProfileIndexRoute
   '/region/$id/dish/$dish': typeof RegionIdDishDishRoute
 }
 export interface FileRoutesById {
@@ -196,6 +203,7 @@ export interface FileRoutesById {
   '/profile/edit': typeof ProfileEditRoute
   '/recipe/$id': typeof RecipeIdRoute
   '/region/$id': typeof RegionIdRouteWithChildren
+  '/profile/': typeof ProfileIndexRoute
   '/region/$id/dish/$dish': typeof RegionIdDishDishRoute
 }
 export interface FileRouteTypes {
@@ -220,6 +228,7 @@ export interface FileRouteTypes {
     | '/profile/edit'
     | '/recipe/$id'
     | '/region/$id'
+    | '/profile/'
     | '/region/$id/dish/$dish'
   fileRoutesByTo: FileRoutesByTo
   to:
@@ -232,7 +241,6 @@ export interface FileRouteTypes {
     | '/notifications'
     | '/onboarding'
     | '/privacy'
-    | '/profile'
     | '/search'
     | '/settings'
     | '/shopping'
@@ -242,6 +250,7 @@ export interface FileRouteTypes {
     | '/profile/edit'
     | '/recipe/$id'
     | '/region/$id'
+    | '/profile'
     | '/region/$id/dish/$dish'
   id:
     | '__root__'
@@ -264,6 +273,7 @@ export interface FileRouteTypes {
     | '/profile/edit'
     | '/recipe/$id'
     | '/region/$id'
+    | '/profile/'
     | '/region/$id/dish/$dish'
   fileRoutesById: FileRoutesById
 }
@@ -388,6 +398,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/profile/': {
+      id: '/profile/'
+      path: '/'
+      fullPath: '/profile/'
+      preLoaderRoute: typeof ProfileIndexRouteImport
+      parentRoute: typeof ProfileRoute
+    }
     '/region/$id': {
       id: '/region/$id'
       path: '/region/$id'
@@ -435,10 +452,12 @@ declare module '@tanstack/react-router' {
 
 interface ProfileRouteChildren {
   ProfileEditRoute: typeof ProfileEditRoute
+  ProfileIndexRoute: typeof ProfileIndexRoute
 }
 
 const ProfileRouteChildren: ProfileRouteChildren = {
   ProfileEditRoute: ProfileEditRoute,
+  ProfileIndexRoute: ProfileIndexRoute,
 }
 
 const ProfileRouteWithChildren =
