@@ -1,7 +1,8 @@
 import { createFileRoute, Link, useNavigate } from "@tanstack/react-router";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { PhoneFrame } from "@/components/PhoneFrame";
 import { Mail, Lock, User, ChefHat, ArrowRight } from "lucide-react";
+import { Checkbox } from "@/components/ui/checkbox";
 import { useAuthStore } from "@/lib/auth-store";
 import { useFlavorStore } from "@/lib/flavor-store";
 import { redirectIfAuthenticated } from "@/lib/route-guards";
@@ -22,6 +23,18 @@ function Auth() {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
   const [flashyMessage, setFlashyMessage] = useState<string | null>(null);
+  const [rememberMe, setRememberMe] = useState(() => {
+    return localStorage.getItem("rememberMe") === "true";
+  });
+
+  useEffect(() => {
+    if (localStorage.getItem("rememberMe") === "true") {
+      const savedEmail = localStorage.getItem("rememberedEmail");
+      const savedPassword = localStorage.getItem("rememberedPassword");
+      if (savedEmail) setEmail(savedEmail);
+      if (savedPassword) setPassword(savedPassword);
+    }
+  }, []);
 
   const navigate = useNavigate();
   const login = useAuthStore((s) => s.login);
@@ -62,6 +75,15 @@ function Auth() {
       const res = await login(email, password);
       setLoading(false);
       if (res.ok) {
+        if (rememberMe) {
+          localStorage.setItem("rememberMe", "true");
+          localStorage.setItem("rememberedEmail", email);
+          localStorage.setItem("rememberedPassword", password);
+        } else {
+          localStorage.removeItem("rememberMe");
+          localStorage.removeItem("rememberedEmail");
+          localStorage.removeItem("rememberedPassword");
+        }
         await loadFromApi();
         navigate({ to: "/home" });
       } else {
@@ -202,7 +224,15 @@ function Auth() {
             />
 
             {mode === "login" && (
-              <div className="flex justify-end">
+              <div className="flex items-center justify-between">
+                <label className="flex items-center gap-2 cursor-pointer select-none">
+                  <Checkbox 
+                    id="rememberMe"
+                    checked={rememberMe}
+                    onCheckedChange={(checked) => setRememberMe(!!checked)}
+                  />
+                  <span className="text-xs font-medium text-foreground/75">Remember me</span>
+                </label>
                 <button 
                   type="button" 
                   onClick={handleForgotPassword}
