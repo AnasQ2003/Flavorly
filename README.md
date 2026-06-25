@@ -1,4 +1,4 @@
-﻿<div align="center">
+<div align="center">
   <h1>🍽️ Flavorly — Cultivate Your Kitchen</h1>
 
   <p>
@@ -113,151 +113,159 @@ Flavorly is a feature-rich culinary platform that gives food lovers everything t
 
 ## 📸 Screenshots
 
-> All 54 screenshots taken from the live application (v1.0.0).
+> All **54 screenshots** taken from the live application (v1.0.0) — every screen is shown below.
 
-<details>
-<summary><strong>🔐 Authentication (3 screenshots)</strong></summary>
+---
 
-| Login Screen | Remember Me | Sign Up |
+### 🚀 Splash & Onboarding
+
+| 01 · Splash Screen | 02 · Welcome | 03 · Discover | 04 · Plan |
+|:---:|:---:|:---:|:---:|
+| ![Splash](./screenshots/01-splash-screen.png) | ![Welcome](./screenshots/02-onboarding-welcome.png) | ![Discover](./screenshots/03-onboarding-discover.png) | ![Plan](./screenshots/04-onboarding-plan.png) |
+
+| 05 · Shop |
+|:---:|
+| ![Shop](./screenshots/05-onboarding-shop.png) |
+
+---
+
+### 🔐 Authentication
+
+| 06 · Login Screen | 07 · Remember Me | 08 · Sign Up |
 |:---:|:---:|:---:|
 | ![Login](./screenshots/06-login-screen.png) | ![Remember Me](./screenshots/07-login-remember-me.png) | ![Sign Up](./screenshots/08-signup-screen.png) |
 
-</details>
+---
 
-<details>
-<summary><strong>🚀 Onboarding (4 screenshots)</strong></summary>
+### 🏠 Home Feed
 
-| Welcome | Discover | Plan | Shop |
-|:---:|:---:|:---:|:---:|
-| ![Welcome](./screenshots/02-onboarding-welcome.png) | ![Discover](./screenshots/03-onboarding-discover.png) | ![Plan](./screenshots/04-onboarding-plan.png) | ![Shop](./screenshots/05-onboarding-shop.png) |
-
-</details>
-
-<details>
-<summary><strong>🏠 Home Feed (4 screenshots)</strong></summary>
-
-| Home Feed | Hero Carousel | Trending | Quick Picks |
+| 09 · Home Feed | 10 · Hero Carousel | 11 · Trending Recipes | 12 · Quick Picks |
 |:---:|:---:|:---:|:---:|
 | ![Home](./screenshots/09-home-feed.png) | ![Carousel](./screenshots/10-home-hero-carousel.png) | ![Trending](./screenshots/11-home-trending-recipes.png) | ![Quick Picks](./screenshots/12-home-quick-picks.png) |
 
-</details>
+---
 
-<details>
-<summary><strong>🗂️ Drawer Navigation (2 screenshots)</strong></summary>
+### 🗂️ Drawer Navigation
 
-| Drawer Menu | Drawer Footer |
+| 13 · Drawer Menu | 14 · Drawer Footer |
 |:---:|:---:|
 | ![Drawer](./screenshots/13-drawer-menu.png) | ![Drawer Footer](./screenshots/14-drawer-footer.png) |
 
-</details>
+---
 
-<details>
-<summary><strong>📂 Categories & Regions (7 screenshots)</strong></summary>
+### 📂 Categories
 
-| Categories | Category Detail | Region Map | Asia | Europe | Americas | Dish Detail |
-|:---:|:---:|:---:|:---:|:---:|:---:|:---:|
-| ![Categories](./screenshots/15-categories-screen.png) | ![Category Detail](./screenshots/16-category-detail.png) | ![World Map](./screenshots/41-region-world-map.png) | ![Asia](./screenshots/42-region-asia.png) | ![Europe](./screenshots/43-region-europe.png) | ![Americas](./screenshots/44-region-americas.png) | ![Dish](./screenshots/45-region-dish-detail.png) |
+| 15 · Categories Screen | 16 · Category Detail |
+|:---:|:---:|
+| ![Categories](./screenshots/15-categories-screen.png) | ![Category Detail](./screenshots/16-category-detail.png) |
 
-</details>
+---
 
-<details>
-<summary><strong>🍳 Recipe Details (5 screenshots)</strong></summary>
+### 🍳 Recipe Details
 
-| Overview | Ingredients | Steps | Nutrition | Reviews |
-|:---:|:---:|:---:|:---:|:---:|
-| ![Top](./screenshots/17-recipe-detail-top.png) | ![Ingredients](./screenshots/18-recipe-detail-ingredients.png) | ![Steps](./screenshots/19-recipe-detail-steps.png) | ![Nutrition](./screenshots/20-recipe-detail-nutrition.png) | ![Reviews](./screenshots/21-recipe-detail-reviews.png) |
+| 17 · Recipe Overview | 18 · Ingredients | 19 · Steps |
+|:---:|:---:|:---:|
+| ![Top](./screenshots/17-recipe-detail-top.png) | ![Ingredients](./screenshots/18-recipe-detail-ingredients.png) | ![Steps](./screenshots/19-recipe-detail-steps.png) |
 
-</details>
+| 20 · Nutrition Facts | 21 · Reviews |
+|:---:|:---:|
+| ![Nutrition](./screenshots/20-recipe-detail-nutrition.png) | ![Reviews](./screenshots/21-recipe-detail-reviews.png) |
 
-<details>
-<summary><strong>🔍 Search (3 screenshots)</strong></summary>
+---
 
-| Search Screen | Search Results | Filters |
+### 🔍 Search
+
+| 22 · Search Screen | 23 · Search Results | 24 · Search Filters |
 |:---:|:---:|:---:|
 | ![Search](./screenshots/22-search-screen.png) | ![Results](./screenshots/23-search-results.png) | ![Filters](./screenshots/24-search-filters.png) |
 
-</details>
+---
 
-<details>
-<summary><strong>❤️ Favorites (1 screenshot)</strong></summary>
+### ❤️ Favorites
 
-| Favorites |
+| 25 · Favorites Screen |
 |:---:|
 | ![Favorites](./screenshots/25-favorites-screen.png) |
 
-</details>
+---
 
-<details>
-<summary><strong>📅 Meal Planner (4 screenshots)</strong></summary>
+### 📅 Meal Planner
 
-| Meal Plan | Add Meal | Weekly View | Add Desert |
+| 26 · Meal Plan | 27 · Add Meal | 28 · Weekly View | 29 · Add Desert |
 |:---:|:---:|:---:|:---:|
 | ![Meal Plan](./screenshots/26-meal-plan-screen.png) | ![Add Meal](./screenshots/27-meal-plan-add-meal.png) | ![Weekly View](./screenshots/28-meal-plan-weekly-view.png) | ![Desert](./screenshots/29-meal-plan-add-desert.png) |
 
-</details>
+---
 
-<details>
-<summary><strong>🛒 Shopping List (3 screenshots)</strong></summary>
+### 🛒 Shopping List
 
-| Shopping List | Add Item | Checked Items |
+| 30 · Shopping List | 31 · Add Item | 32 · Checked Items |
 |:---:|:---:|:---:|
 | ![Shopping](./screenshots/30-shopping-list.png) | ![Add Item](./screenshots/31-shopping-list-add-item.png) | ![Checked](./screenshots/32-shopping-list-checked.png) |
 
-</details>
+---
 
-<details>
-<summary><strong>🔔 Notifications (2 screenshots)</strong></summary>
+### 🔔 Notifications
 
-| Notifications | Unread |
+| 33 · Notifications | 34 · Unread Badge |
 |:---:|:---:|
 | ![Notifications](./screenshots/33-notifications-screen.png) | ![Unread](./screenshots/34-notifications-unread.png) |
 
-</details>
+---
 
-<details>
-<summary><strong>👤 Profile (3 screenshots)</strong></summary>
+### 👤 Profile
 
-| Profile | Edit Profile | Share Profile |
+| 35 · Profile Screen | 36 · Edit Profile | 37 · Share Profile |
 |:---:|:---:|:---:|
 | ![Profile](./screenshots/35-profile-screen.png) | ![Edit](./screenshots/36-profile-edit.png) | ![Share](./screenshots/37-profile-share.png) |
 
-</details>
+---
 
-<details>
-<summary><strong>⚙️ Settings (3 screenshots)</strong></summary>
+### ⚙️ Settings
 
-| Settings | Dietary | Notifications |
+| 38 · Settings | 39 · Dietary Prefs | 40 · Notif Settings |
 |:---:|:---:|:---:|
 | ![Settings](./screenshots/38-settings-screen.png) | ![Dietary](./screenshots/39-settings-dietary.png) | ![Notif Settings](./screenshots/40-settings-notifications.png) |
 
-</details>
+---
 
-<details>
-<summary><strong>📝 Blog (2 screenshots)</strong></summary>
+### 🌍 Regions & World Cuisine
 
-| Blog List | Blog Post |
+| 41 · World Map | 42 · Asia | 43 · Europe |
+|:---:|:---:|:---:|
+| ![World Map](./screenshots/41-region-world-map.png) | ![Asia](./screenshots/42-region-asia.png) | ![Europe](./screenshots/43-region-europe.png) |
+
+| 44 · Americas | 45 · Dish Detail |
+|:---:|:---:|
+| ![Americas](./screenshots/44-region-americas.png) | ![Dish](./screenshots/45-region-dish-detail.png) |
+
+---
+
+### 📝 Blog
+
+| 46 · Blog List | 47 · Blog Post Detail |
 |:---:|:---:|
 | ![Blog](./screenshots/46-blog-list.png) | ![Post](./screenshots/47-blog-post-detail.png) |
 
-</details>
+---
 
-<details>
-<summary><strong>📜 Legal Pages (2 screenshots)</strong></summary>
+### 📜 Legal Pages
 
-| Privacy Policy | Terms of Service |
+| 48 · Privacy Policy | 49 · Terms of Service |
 |:---:|:---:|
 | ![Privacy](./screenshots/48-privacy-policy.png) | ![Terms](./screenshots/49-terms-of-service.png) |
 
-</details>
+---
 
-<details>
-<summary><strong>🌙 Dark Mode & Responsive (5 screenshots)</strong></summary>
+### 🌙 Dark Mode & Responsive
 
-| Dark Home | Dark Recipe | Dark Profile | Tablet View | App Overview |
-|:---:|:---:|:---:|:---:|:---:|
-| ![Dark Home](./screenshots/50-dark-mode-home.png) | ![Dark Recipe](./screenshots/51-dark-mode-recipe.png) | ![Dark Profile](./screenshots/52-dark-mode-profile.png) | ![Tablet](./screenshots/53-responsive-tablet-view.png) | ![Overview](./screenshots/54-app-overview.png) |
+| 50 · Dark Mode Home | 51 · Dark Mode Recipe | 52 · Dark Mode Profile |
+|:---:|:---:|:---:|
+| ![Dark Home](./screenshots/50-dark-mode-home.png) | ![Dark Recipe](./screenshots/51-dark-mode-recipe.png) | ![Dark Profile](./screenshots/52-dark-mode-profile.png) |
 
-</details>
+| 53 · Tablet View | 54 · App Overview |
+|:---:|:---:|
+| ![Tablet](./screenshots/53-responsive-tablet-view.png) | ![Overview](./screenshots/54-app-overview.png) |
 
 ---
 
