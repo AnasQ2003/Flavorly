@@ -113,7 +113,6 @@ Flavorly is a feature-rich culinary platform that gives food lovers everything t
 
 ## 📸 Screenshots
 
-> All **54 screenshots** taken from the live application (v1.0.0) — every screen is shown below.
 
 ---
 
