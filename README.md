@@ -291,7 +291,7 @@ Flavorly/
 │       ├── routes/       # File-based page routes
 │       └── styles.css    # Global TailwindCSS v4 stylesheet
 │
-└── screenshots/      # App screenshots (54 images)
+└── screenshots/      # App screenshots
 ```
 
 ---
