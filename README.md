@@ -4,7 +4,7 @@
   🎬 **Watch the Demo Video — Flavorly:** [https://youtu.be/Kfbt8sS1VKU](https://youtu.be/Kfbt8sS1VKU)
 
   <p>
-    A full-stack recipe discovery &amp; meal planning web app built with
+    A full-stack recipe discovery &amp; meal planning mobile app built with
     <strong>React 19 · TanStack Start · TailwindCSS v4 · Node.js · Express · SQL Server</strong>
   </p>
 
