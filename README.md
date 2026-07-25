@@ -510,7 +510,6 @@ npm install
 npm run dev
 ```
 
-API available at: **http://localhost:5000**
 
 ### 4. Start the Frontend
 
@@ -519,8 +518,6 @@ cd frontend
 npm install
 npm run dev
 ```
-
-App available at: **http://localhost:3000**
 
 ---
 
@@ -634,7 +631,7 @@ All endpoints are prefixed with `/api`. Protected endpoints require `Authorizati
 ## 📖 How to Use the App
 
 ### First Time Setup
-1. Open the app at `http://localhost:3000`
+1. Open the app 
 2. Complete the **4-step onboarding** by swiping through the intro screens
 3. **Sign Up** with your name, email, and a strong password
 4. **Login** — check **Remember Me** to save credentials for next time
