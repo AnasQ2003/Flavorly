@@ -120,153 +120,248 @@ Flavorly is a feature-rich culinary platform that gives food lovers everything t
 
 ### 🚀 Splash & Onboarding
 
-| 01 · Splash Screen | 02 · Welcome | 03 · Discover | 04 · Plan |
-|:---:|:---:|:---:|:---:|
-| ![Splash](./screenshots/01-splash-screen.png) | ![Welcome](./screenshots/02-onboarding-welcome.png) | ![Discover](./screenshots/03-onboarding-discover.png) | ![Plan](./screenshots/04-onboarding-plan.png) |
-
-| 05 · Shop |
-|:---:|
-| ![Shop](./screenshots/05-onboarding-shop.png) |
+<table align="center">
+  <tr>
+    <td align="center" width="50%"><img src="./screenshots/01-splash-screen.png" width="100%"/><br/><b>01 · Splash Screen</b></td>
+    <td align="center" width="50%"><img src="./screenshots/02-onboarding-welcome.png" width="100%"/><br/><b>02 · Welcome</b></td>
+  </tr>
+  <tr>
+    <td align="center" width="50%"><img src="./screenshots/03-onboarding-discover.png" width="100%"/><br/><b>03 · Discover</b></td>
+    <td align="center" width="50%"><img src="./screenshots/04-onboarding-plan.png" width="100%"/><br/><b>04 · Plan</b></td>
+  </tr>
+  <tr>
+    <td align="center" width="50%"><img src="./screenshots/05-onboarding-shop.png" width="100%"/><br/><b>05 · Shop</b></td>
+    <td align="center" width="50%"></td>
+  </tr>
+</table>
 
 ---
 
 ### 🔐 Authentication
 
-| 06 · Login Screen | 07 · Remember Me | 08 · Sign Up |
-|:---:|:---:|:---:|
-| ![Login](./screenshots/06-login-screen.png) | ![Remember Me](./screenshots/07-login-remember-me.png) | ![Sign Up](./screenshots/08-signup-screen.png) |
+<table align="center">
+  <tr>
+    <td align="center" width="50%"><img src="./screenshots/06-login-screen.png" width="100%"/><br/><b>06 · Login Screen</b></td>
+    <td align="center" width="50%"><img src="./screenshots/07-login-remember-me.png" width="100%"/><br/><b>07 · Remember Me</b></td>
+  </tr>
+  <tr>
+    <td align="center" width="50%"><img src="./screenshots/08-signup-screen.png" width="100%"/><br/><b>08 · Sign Up</b></td>
+    <td align="center" width="50%"></td>
+  </tr>
+</table>
 
 ---
 
 ### 🏠 Home Feed
 
-| 09 · Home Feed | 10 · Hero Carousel | 11 · Trending Recipes | 12 · Quick Picks |
-|:---:|:---:|:---:|:---:|
-| ![Home](./screenshots/09-home-feed.png) | ![Carousel](./screenshots/10-home-hero-carousel.png) | ![Trending](./screenshots/11-home-trending-recipes.png) | ![Quick Picks](./screenshots/12-home-quick-picks.png) |
+<table align="center">
+  <tr>
+    <td align="center" width="50%"><img src="./screenshots/09-home-feed.png" width="100%"/><br/><b>09 · Home Feed</b></td>
+    <td align="center" width="50%"><img src="./screenshots/10-home-hero-carousel.png" width="100%"/><br/><b>10 · Hero Carousel</b></td>
+  </tr>
+  <tr>
+    <td align="center" width="50%"><img src="./screenshots/11-home-trending-recipes.png" width="100%"/><br/><b>11 · Trending Recipes</b></td>
+    <td align="center" width="50%"><img src="./screenshots/12-home-quick-picks.png" width="100%"/><br/><b>12 · Quick Picks</b></td>
+  </tr>
+</table>
 
 ---
 
 ### 🗂️ Drawer Navigation
 
-| 13 · Drawer Menu | 14 · Drawer Footer |
-|:---:|:---:|
-| ![Drawer](./screenshots/13-drawer-menu.png) | ![Drawer Footer](./screenshots/14-drawer-footer.png) |
+<table align="center">
+  <tr>
+    <td align="center" width="50%"><img src="./screenshots/13-drawer-menu.png" width="100%"/><br/><b>13 · Drawer Menu</b></td>
+    <td align="center" width="50%"><img src="./screenshots/14-drawer-footer.png" width="100%"/><br/><b>14 · Drawer Footer</b></td>
+  </tr>
+</table>
 
 ---
 
 ### 📂 Categories
 
-| 15 · Categories Screen | 16 · Category Detail |
-|:---:|:---:|
-| ![Categories](./screenshots/15-categories-screen.png) | ![Category Detail](./screenshots/16-category-detail.png) |
+<table align="center">
+  <tr>
+    <td align="center" width="50%"><img src="./screenshots/15-categories-screen.png" width="100%"/><br/><b>15 · Categories Screen</b></td>
+    <td align="center" width="50%"><img src="./screenshots/16-category-detail.png" width="100%"/><br/><b>16 · Category Detail</b></td>
+  </tr>
+</table>
 
 ---
 
 ### 🍳 Recipe Details
 
-| 17 · Recipe Overview | 18 · Ingredients | 19 · Steps |
-|:---:|:---:|:---:|
-| ![Top](./screenshots/17-recipe-detail-top.png) | ![Ingredients](./screenshots/18-recipe-detail-ingredients.png) | ![Steps](./screenshots/19-recipe-detail-steps.png) |
-
-| 20 · Nutrition Facts | 21 · Reviews |
-|:---:|:---:|
-| ![Nutrition](./screenshots/20-recipe-detail-nutrition.png) | ![Reviews](./screenshots/21-recipe-detail-reviews.png) |
+<table align="center">
+  <tr>
+    <td align="center" width="50%"><img src="./screenshots/17-recipe-detail-top.png" width="100%"/><br/><b>17 · Recipe Overview</b></td>
+    <td align="center" width="50%"><img src="./screenshots/18-recipe-detail-ingredients.png" width="100%"/><br/><b>18 · Ingredients</b></td>
+  </tr>
+  <tr>
+    <td align="center" width="50%"><img src="./screenshots/19-recipe-detail-steps.png" width="100%"/><br/><b>19 · Steps</b></td>
+    <td align="center" width="50%"><img src="./screenshots/20-recipe-detail-nutrition.png" width="100%"/><br/><b>20 · Nutrition Facts</b></td>
+  </tr>
+  <tr>
+    <td align="center" width="50%"><img src="./screenshots/21-recipe-detail-reviews.png" width="100%"/><br/><b>21 · Reviews</b></td>
+    <td align="center" width="50%"></td>
+  </tr>
+</table>
 
 ---
 
 ### 🔍 Search
 
-| 22 · Search Screen | 23 · Search Results | 24 · Search Filters |
-|:---:|:---:|:---:|
-| ![Search](./screenshots/22-search-screen.png) | ![Results](./screenshots/23-search-results.png) | ![Filters](./screenshots/24-search-filters.png) |
+<table align="center">
+  <tr>
+    <td align="center" width="50%"><img src="./screenshots/22-search-screen.png" width="100%"/><br/><b>22 · Search Screen</b></td>
+    <td align="center" width="50%"><img src="./screenshots/23-search-results.png" width="100%"/><br/><b>23 · Search Results</b></td>
+  </tr>
+  <tr>
+    <td align="center" width="50%"><img src="./screenshots/24-search-filters.png" width="100%"/><br/><b>24 · Search Filters</b></td>
+    <td align="center" width="50%"></td>
+  </tr>
+</table>
 
 ---
 
 ### ❤️ Favorites
 
-| 25 · Favorites Screen |
-|:---:|
-| ![Favorites](./screenshots/25-favorites-screen.png) |
+<table align="center">
+  <tr>
+    <td align="center" width="50%"><img src="./screenshots/25-favorites-screen.png" width="100%"/><br/><b>25 · Favorites Screen</b></td>
+    <td align="center" width="50%"></td>
+  </tr>
+</table>
 
 ---
 
 ### 📅 Meal Planner
 
-| 26 · Meal Plan | 27 · Add Meal | 28 · Weekly View | 29 · Add Desert |
-|:---:|:---:|:---:|:---:|
-| ![Meal Plan](./screenshots/26-meal-plan-screen.png) | ![Add Meal](./screenshots/27-meal-plan-add-meal.png) | ![Weekly View](./screenshots/28-meal-plan-weekly-view.png) | ![Desert](./screenshots/29-meal-plan-add-desert.png) |
+<table align="center">
+  <tr>
+    <td align="center" width="50%"><img src="./screenshots/26-meal-plan-screen.png" width="100%"/><br/><b>26 · Meal Plan</b></td>
+    <td align="center" width="50%"><img src="./screenshots/27-meal-plan-add-meal.png" width="100%"/><br/><b>27 · Add Meal</b></td>
+  </tr>
+  <tr>
+    <td align="center" width="50%"><img src="./screenshots/28-meal-plan-weekly-view.png" width="100%"/><br/><b>28 · Weekly View</b></td>
+    <td align="center" width="50%"><img src="./screenshots/29-meal-plan-add-desert.png" width="100%"/><br/><b>29 · Add Dessert</b></td>
+  </tr>
+</table>
 
 ---
 
 ### 🛒 Shopping List
 
-| 30 · Shopping List | 31 · Add Item | 32 · Checked Items |
-|:---:|:---:|:---:|
-| ![Shopping](./screenshots/30-shopping-list.png) | ![Add Item](./screenshots/31-shopping-list-add-item.png) | ![Checked](./screenshots/32-shopping-list-checked.png) |
+<table align="center">
+  <tr>
+    <td align="center" width="50%"><img src="./screenshots/30-shopping-list.png" width="100%"/><br/><b>30 · Shopping List</b></td>
+    <td align="center" width="50%"><img src="./screenshots/31-shopping-list-add-item.png" width="100%"/><br/><b>31 · Add Item</b></td>
+  </tr>
+  <tr>
+    <td align="center" width="50%"><img src="./screenshots/32-shopping-list-checked.png" width="100%"/><br/><b>32 · Checked Items</b></td>
+    <td align="center" width="50%"></td>
+  </tr>
+</table>
 
 ---
 
 ### 🔔 Notifications
 
-| 33 · Notifications | 34 · Unread Badge |
-|:---:|:---:|
-| ![Notifications](./screenshots/33-notifications-screen.png) | ![Unread](./screenshots/34-notifications-unread.png) |
+<table align="center">
+  <tr>
+    <td align="center" width="50%"><img src="./screenshots/33-notifications-screen.png" width="100%"/><br/><b>33 · Notifications</b></td>
+    <td align="center" width="50%"><img src="./screenshots/34-notifications-unread.png" width="100%"/><br/><b>34 · Unread Badge</b></td>
+  </tr>
+</table>
 
 ---
 
 ### 👤 Profile
 
-| 35 · Profile Screen | 36 · Edit Profile | 37 · Share Profile |
-|:---:|:---:|:---:|
-| ![Profile](./screenshots/35-profile-screen.png) | ![Edit](./screenshots/36-profile-edit.png) | ![Share](./screenshots/37-profile-share.png) |
+<table align="center">
+  <tr>
+    <td align="center" width="50%"><img src="./screenshots/35-profile-screen.png" width="100%"/><br/><b>35 · Profile Screen</b></td>
+    <td align="center" width="50%"><img src="./screenshots/36-profile-edit.png" width="100%"/><br/><b>36 · Edit Profile</b></td>
+  </tr>
+  <tr>
+    <td align="center" width="50%"><img src="./screenshots/37-profile-share.png" width="100%"/><br/><b>37 · Share Profile</b></td>
+    <td align="center" width="50%"></td>
+  </tr>
+</table>
 
 ---
 
 ### ⚙️ Settings
 
-| 38 · Settings | 39 · Dietary Prefs | 40 · Notif Settings |
-|:---:|:---:|:---:|
-| ![Settings](./screenshots/38-settings-screen.png) | ![Dietary](./screenshots/39-settings-dietary.png) | ![Notif Settings](./screenshots/40-settings-notifications.png) |
+<table align="center">
+  <tr>
+    <td align="center" width="50%"><img src="./screenshots/38-settings-screen.png" width="100%"/><br/><b>38 · Settings</b></td>
+    <td align="center" width="50%"><img src="./screenshots/39-settings-dietary.png" width="100%"/><br/><b>39 · Dietary Prefs</b></td>
+  </tr>
+  <tr>
+    <td align="center" width="50%"><img src="./screenshots/40-settings-notifications.png" width="100%"/><br/><b>40 · Notif Settings</b></td>
+    <td align="center" width="50%"></td>
+  </tr>
+</table>
 
 ---
 
 ### 🌍 Regions & World Cuisine
 
-| 41 · World Map | 42 · Asia | 43 · Europe |
-|:---:|:---:|:---:|
-| ![World Map](./screenshots/41-region-world-map.png) | ![Asia](./screenshots/42-region-asia.png) | ![Europe](./screenshots/43-region-europe.png) |
-
-| 44 · Americas | 45 · Dish Detail |
-|:---:|:---:|
-| ![Americas](./screenshots/44-region-americas.png) | ![Dish](./screenshots/45-region-dish-detail.png) |
+<table align="center">
+  <tr>
+    <td align="center" width="50%"><img src="./screenshots/41-region-world-map.png" width="100%"/><br/><b>41 · World Map</b></td>
+    <td align="center" width="50%"><img src="./screenshots/42-region-asia.png" width="100%"/><br/><b>42 · Asia</b></td>
+  </tr>
+  <tr>
+    <td align="center" width="50%"><img src="./screenshots/43-region-europe.png" width="100%"/><br/><b>43 · Europe</b></td>
+    <td align="center" width="50%"><img src="./screenshots/44-region-americas.png" width="100%"/><br/><b>44 · Americas</b></td>
+  </tr>
+  <tr>
+    <td align="center" width="50%"><img src="./screenshots/45-region-dish-detail.png" width="100%"/><br/><b>45 · Dish Detail</b></td>
+    <td align="center" width="50%"></td>
+  </tr>
+</table>
 
 ---
 
 ### 📝 Blog
 
-| 46 · Blog List | 47 · Blog Post Detail |
-|:---:|:---:|
-| ![Blog](./screenshots/46-blog-list.png) | ![Post](./screenshots/47-blog-post-detail.png) |
+<table align="center">
+  <tr>
+    <td align="center" width="50%"><img src="./screenshots/46-blog-list.png" width="100%"/><br/><b>46 · Blog List</b></td>
+    <td align="center" width="50%"><img src="./screenshots/47-blog-post-detail.png" width="100%"/><br/><b>47 · Blog Post Detail</b></td>
+  </tr>
+</table>
 
 ---
 
 ### 📜 Legal Pages
 
-| 48 · Privacy Policy | 49 · Terms of Service |
-|:---:|:---:|
-| ![Privacy](./screenshots/48-privacy-policy.png) | ![Terms](./screenshots/49-terms-of-service.png) |
+<table align="center">
+  <tr>
+    <td align="center" width="50%"><img src="./screenshots/48-privacy-policy.png" width="100%"/><br/><b>48 · Privacy Policy</b></td>
+    <td align="center" width="50%"><img src="./screenshots/49-terms-of-service.png" width="100%"/><br/><b>49 · Terms of Service</b></td>
+  </tr>
+</table>
 
 ---
 
 ### 🌙 Dark Mode & Responsive
 
-| 50 · Dark Mode Home | 51 · Dark Mode Recipe | 52 · Dark Mode Profile |
-|:---:|:---:|:---:|
-| ![Dark Home](./screenshots/50-dark-mode-home.png) | ![Dark Recipe](./screenshots/51-dark-mode-recipe.png) | ![Dark Profile](./screenshots/52-dark-mode-profile.png) |
-
-| 53 · Tablet View | 54 · App Overview |
-|:---:|:---:|
-| ![Tablet](./screenshots/53-responsive-tablet-view.png) | ![Overview](./screenshots/54-app-overview.png) |
+<table align="center">
+  <tr>
+    <td align="center" width="50%"><img src="./screenshots/50-dark-mode-home.png" width="100%"/><br/><b>50 · Dark Mode Home</b></td>
+    <td align="center" width="50%"><img src="./screenshots/51-dark-mode-recipe.png" width="100%"/><br/><b>51 · Dark Mode Recipe</b></td>
+  </tr>
+  <tr>
+    <td align="center" width="50%"><img src="./screenshots/52-dark-mode-profile.png" width="100%"/><br/><b>52 · Dark Mode Profile</b></td>
+    <td align="center" width="50%"><img src="./screenshots/53-responsive-tablet-view.png" width="100%"/><br/><b>53 · Tablet View</b></td>
+  </tr>
+  <tr>
+    <td align="center" width="50%"><img src="./screenshots/54-app-overview.png" width="100%"/><br/><b>54 · App Overview</b></td>
+    <td align="center" width="50%"></td>
+  </tr>
+</table>
 
 ---
 
